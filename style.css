@@ -1,0 +1,125 @@
+@charset "UTF-8";
+
+@import url(https://fonts.googleapis.com/css?family=Lexend+Deca:100,200,300,regular,500,600,700,800,900);
+@import url(https://fonts.googleapis.com/css?family=Big+Shoulders+Display:100,200,300,regular,500,600,700,800,900);
+
+:root {
+  --Bright-orange: hsl(31, 77%, 52%);
+  --Dark-cyan: hsl(184, 100%, 22%);
+  --Very-dark-cyan: hsl(179, 100%, 13%);
+  --Transparent-white: hsla(0, 0%, 100%, 0.75);
+  --Very-light-gray: hsl(0, 0%, 95%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+body {
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+  background: var(--Very-light-gray);
+  padding: 1em 0; 
+}
+
+.main {
+  display: flex;
+}
+
+.cards {
+  display: flex;
+}
+
+.cards__wrapper {
+  width: 20rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  place-content: center;
+  border-radius: .75rem;
+}
+
+.card1 {
+  background: var(--Bright-orange);
+}
+
+.card2 {
+  background: var(--Dark-cyan);
+}
+
+.card3 {
+  background: var(--Very-dark-cyan);
+}
+
+.cards__card {
+  width: 100%;
+  height: 28.125rem;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  padding: 3em 2.7em;
+}
+
+.card__title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-family: 'Big Shoulders Display', sans-serif;
+  color: var(--Very-light-gray);
+}
+
+.card__text {
+  width: 84%;
+  font-size: .8rem;
+  font-weight: 400;
+  font-family: 'Lexend Deca', sans-serif;
+  line-height: 1.8em;
+  text-align: left;
+  color: var(--Transparent-white);
+}
+
+.card__btn1, .card__btn2, .card__btn3 {
+  background: var(--Very-light-gray);
+  font-size: .9rem;
+  font-family: 'Lexend Deca', sans-serif;
+  border-radius: 1.5625rem;
+  border: 2px solid transparent;
+  padding: 1em 2.1em;
+  transition: all 250ms ease;
+}
+
+.card__btn1 {
+  color: var(--Bright-orange);
+}
+
+.card__btn2 {
+  color: var(--Dark-cyan);
+}
+
+.card__btn3 {
+  color: var(--Very-dark-cyan);
+}
+
+.card__btn1:hover, .card__btn2:hover, .card__btn3:hover {
+  background: transparent;
+  color: var(--Very-light-gray);
+  border: 2px solid var(--Very-light-gray);
+}
+
+@media screen and (min-width:1024px) {
+  .cards__wrapper {
+    width: 56.25rem;
+  }
+
+  /* .card__text {
+    width: 84%;
+  } */
+}
